@@ -16,7 +16,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_04_134607) do
   enable_extension "postgis"
 
   create_table "shapes", force: :cascade do |t|
-    t.string "name"
+    t.string "property_name"
+    t.string "property_ccir"
+    t.string "property_register"
+    t.float "property_area"
     t.geometry "geom", limit: {:srid=>4326, :type=>"geometry", :has_z=>true, :has_m=>true}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
