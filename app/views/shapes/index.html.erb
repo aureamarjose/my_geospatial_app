@@ -1,0 +1,28 @@
+<div class="border container" >
+  <h1 class="font-bold text-4xl">Shapes#index</h1>
+  <p>Find me in app/views/shapes/index.html.erb</p>
+
+
+
+
+
+  <div class="border mb-10" id="map" style="height: 100vh;"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var map = L.map('map').setView([0, 0], 2);
+
+      var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var geojson = <%= raw @geojson.to_json %>;
+      var geojsonLayer = L.geoJSON(geojson).addTo(map);
+
+      // Ajusta o mapa para caber todos os shapes
+      if (geojsonLayer.getBounds().isValid()) {
+        map.fitBounds(geojsonLayer.getBounds());
+      }
+    });
+  </script>
+</div>
