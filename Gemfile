@@ -60,7 +60,7 @@ group :test do
 end
 
 gem "rgeo", "3.0.1"
-gem "activerecord-postgis-adapter", "10.0.0"
+gem "activerecord-postgis-adapter", "10.0.1"
 gem "rgeo-shapefile", "3.1.0"
 gem "ffi-geos", "2.5"
 gem "rgeo-geojson", "2.2.0"
