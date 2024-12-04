@@ -50,6 +50,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "rails_live_reload"
 end
 
 group :test do
@@ -63,3 +64,6 @@ gem "activerecord-postgis-adapter", "10.0.0"
 gem "rgeo-shapefile", "3.1.0"
 gem "ffi-geos", "2.5"
 gem "rgeo-geojson", "2.2.0"
+
+gem "tailwindcss-ruby", "~> 3.4"
+gem "foreman", "~> 0.88.1"
