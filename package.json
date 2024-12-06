@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "@arcgis/core": "^4.31.6",
+    "esri-leaflet": "^3.0.13",
+    "esri-leaflet-vector": "^4.2.5",
+    "esri-loader": "^3.7.0",
     "leaflet": "^1.9.4"
   }
 }

@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" style="height: 100vh;">
   <h1 class="font-bold text-4xl">Imóveis Rurais</h1>
-
 
   <div data-controller="shape--showShape"  style="height: 100vh;" class="mt-10">
     <div id="map" data-shape--showShape-target="map" style="height: 80%;"></div>
     <%= hidden_field_tag :geojson, @geojson.to_json, data:{"shape--showShape-target":"geojson"}  %>
   </div>
+
 </div>

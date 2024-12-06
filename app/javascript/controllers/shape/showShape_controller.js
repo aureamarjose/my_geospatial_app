@@ -1,17 +1,29 @@
 import { Controller } from "@hotwired/stimulus"
-import * as L from "leaflet"
+import 'esri-leaflet';
+import 'esri-leaflet-vector';
 
 export default class extends Controller {
   static targets = ["map", "geojson"]
   connect() {
-    //console.log("Map connected")
+    // acesso a imagem bing
+    const accessToken = "AAPTxy8BH1VEsoebNVZXo8HurOz2ILV9IPXaEiSb0kQglNnfngCE-t23J0gdUQEZyAm95qD9AieY0HRNfaKeLkAj3LoBhEmIj9HlTjgvQuyOAiUYHDlIGd-cHp_Zf1k8Kq1Q7UKFNdSkGeAh_KCdRDte3Kw-6KO6pFdJgw2iKs7k7QoVDM0J8EqmS15EtY3NnKY7p-LbeLv98Vta1cKE8Vtkmt9Xhs8c6V8RYgi443916ss.AT1_2b39mK4T"; // Substitua pelo seu token de acesso
 
-    let map = L.map(this.mapTarget).setView([0, 0], 2);
+    const basemapEnum = "arcgis/imagery"; // Substitua pelo estilo de mapa desejado
 
-    let osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    let map = L.map(this.mapTarget, {
+      minZoom: 2
+    }).setView([34.02, -118.805], 13);
+
+    /* L.esri.Vector.vectorBasemapLayer(basemapEnum, {
+      token: accessToken,
+      version: 2
+    }).addTo(map); */
+
+    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    //inserir shapefile
     let geojsonData = this.geojsonTarget.value;
 
     let geojson;
@@ -40,5 +52,6 @@ export default class extends Controller {
     if (geojsonLayer.getBounds().isValid()) {
       map.fitBounds(geojsonLayer.getBounds());
     }
+
   }
 }
