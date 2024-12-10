@@ -7,7 +7,7 @@ export default class extends Controller {
   static targets = ["map", "geojson"]
   connect() {
     // acesso a imagem bing
-    const accessToken = "AAPTxy8BH1VEsoebNVZXo8HurOz2ILV9IPXaEiSb0kQglNnfngCE-t23J0gdUQEZyAm95qD9AieY0HRNfaKeLkAj3LoBhEmIj9HlTjgvQuyOAiUYHDlIGd-cHp_Zf1k8Kq1Q7UKFNdSkGeAh_KCdRDte3Kw-6KO6pFdJgw2iKs7k7QoVDM0J8EqmS15EtY3NnKY7p-LbeLv98Vta1cKE8Vtkmt9Xhs8c6V8RYgi443916ss.AT1_2b39mK4T"; // Substitua pelo seu token de acesso
+    const accessToken = "token"; // Substitua pelo seu token de acesso
 
     const basemapEnum = "arcgis/imagery"; // Substitua pelo estilo de mapa desejado
 
