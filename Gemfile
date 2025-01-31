@@ -65,5 +65,5 @@ gem "rgeo-shapefile", "3.1.0"
 gem "ffi-geos", "2.5"
 gem "rgeo-geojson", "2.2.0"
 
-gem "tailwindcss-ruby", "~> 3.4"
+gem "tailwindcss-ruby", "~> 4.0"
 gem "foreman", "~> 0.88.1"
